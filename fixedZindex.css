@@ -1,0 +1,29 @@
+To address the inconsistent z-index behavior, ensure that elements are placed within well-defined stacking contexts, and consider using flexbox or grid for predictable layout.  The following code example demonstrates a solution for consistent stacking of elements with differing z-index values:
+
+```css
+.container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the elements */
+}
+
+.element1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute; /* Consider removing if using flexbox */
+  z-index: 1;
+}
+
+.element2 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  position: absolute; /* Consider removing if using flexbox */
+  z-index: 2;
+}
+```
+By using flexbox or grid, we can easily achieve consistent positioning without relying solely on absolute positioning and z-index.  This enhances maintainability and predictability across different browsers.

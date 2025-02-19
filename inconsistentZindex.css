@@ -1,0 +1,29 @@
+The following CSS code snippet demonstrates an issue where the expected behavior of overlapping elements with different z-index values is not consistent across different browsers.  This is particularly problematic when dealing with complex layouts or animations.  The element with the higher z-index should always be on top, however inconsistent z-index stacking can be observed due to factors like rendering order.
+
+```css
+.container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.element1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+}
+
+.element2 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+}
+```
